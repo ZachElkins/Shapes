@@ -1,0 +1,36 @@
+body {
+	width: 100%;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+canvas {
+	display: block;
+	border: 1px solid black;
+	margin: 0 auto;
+}
+
+#options {
+	display: block;
+	margin: 0 auto;
+	border: 1px solid black;
+}
+
+#shapes, #colors, #tools, #selection-options {
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+	border: 1px solid black;
+}
+
+#selection-options {
+	justify-content: center;
+	text-align: center;
+}
+
+#selection-options > input {
+	/*position: relative;*/
+	width: 120px;
+	height: 50px;
+	font-size: 175px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<head>
+
+	<script src="mouse-listeners.js"></script>	
+	<script src="layer.js"></script>
+	<script src="object.js"></script>
+	<script src="main.js"></script>	
+	<link rel="stylesheet" href="main.css" />
+	<title> Objects </title>
+
+</head>
+
+<body>
+	<canvas id="canvas" width="500" height="500"></canvas>
+	<div id="options">
+		<div id="shapes">
+			<input type="radio" name="shape" value="rectangle" id="rectangle" checked/>
+			<label for="rectangle">Rectangle</label>
+			<br>
+			<input type="radio" name="shape" value="circle" id="circle"/>
+			<label for="cirlce">Circle</label>
+		</div>
+		<br>
+		<div id="colors">
+			<input type="radio" name="color" value="rgba(254,220,186,0.8)" id="red"/>
+			<label for="red">Red</label>
+			<br>
+			<input type="radio" name="color" value="rgba(186,220,254,0.8)" id="blue" checked/>
+			<label for="blue">Blue</label>
+		</div>
+		<br>
+		<div id="tools">
+			<input type="radio" name="tool" value="draw" id="draw" checked/>
+			<label for="draw">Draw</label>
+			<br>
+			<input type="radio" name="tool" value="select" id="select"/>
+			<label for="select">Select</label>
+		</div>
+		<br>
+		<div id="selection-options">
+			<input type="button" name="option" value="Send to Front" id="front" disabled="true" />
+			<input type="button" name="option" value="Send to Back" id="back" disabled="true" />
+			<br>
+			<input type="button" name="option" value="Bring Forwards" id="forward" disabled="true" />
+			<input type="button" name="option" value="Bring Backwards" id="backward" disabled="true" />
+			<br>
+			<input type="button" name="option" value="Delete" id="delete" disabled="true" />
+		</div>
+	</div>
+</body>
