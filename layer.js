@@ -62,34 +62,52 @@ class Layer {
 	}
 
 	sendToFront( id ) {
-		if( id <= 0 ) {
-			return;
-		}
+		if( id <= 0 ) { return; }
+
 		let obj = this.objects.splice( id, 1 )[0];
 		obj.id = 0;
 		this.objects.forEach( elm => { if( elm.id < id ) { elm.id+=1 } } );
 		this.objects.unshift( obj );
-		console.log( this.objects )
-		this.select( obj.id )
+		this.select( obj.id );
 	}
 
 	sendToBack( id ) {
-		if( id >= this.objects.length ) {
-			return;
-		}
+		if( id >= this.objects.length ) { return; }
+
 		let obj = this.objects.splice( id, 1 )[0];
 		obj.id = this.objects.length;
 		this.objects.forEach( elm => { if( elm.id > id ) { elm.id-=1 } } );
 		this.objects.push( obj );
-		this.select( obj.id )
+		this.select( obj.id );
 	}
 
-	sendForwrads( id ) {
-
+	sendForwards( id ) {
+		if( id <= 0 ) { return; }
+		let obj1 = this.objects[id];
+		let obj2 = this.objects[id-1];
+		obj1.id -= 1;
+		obj2.id += 1;
+		this.select( obj1.id );
+		this.objects[id-1] = obj1;
+		this.objects[id] = obj2;
 	}
 
-	sendBack( id ) {
+	sendBackwards( id ) {
+		if( id >= this.objects.length-1 ) { return; }
 
+		let obj1 = this.objects[id];
+		let obj2 = this.objects[id+1];
+		obj1.id += 1;
+		obj2.id -= 1;
+		this.select( obj1.id );
+		this.objects[id+1] = obj1;
+		this.objects[id] = obj2;
+	}
+
+	delete( id ) {
+		if( id < 0 || id > this.objects.length-1 ) { return; }
+		this.objects.splice( id, 1 );
+		this.objects.forEach( elm => { if( elm.id > id ) { elm.id-=1 } } )
 	}
 
 }

@@ -19,6 +19,7 @@ window.onload = function() {
 	document.getElementById( "back" ).addEventListener( "click", back );
 	document.getElementById( "forward" ).addEventListener( "click", forward );
 	document.getElementById( "backward" ).addEventListener( "click", backward );
+	document.getElementById( "delete" ).addEventListener( "click", deleteObj );
 
 	layer = new Layer();
 
@@ -30,6 +31,15 @@ function front() {
 }
 function back() {
 	layer.sendToBack(layer.selected());
+}
+function forward() {
+	layer.sendForwards(layer.selected());
+}
+function backward() {
+	layer.sendBackwards(layer.selected());
+}
+function deleteObj() {
+	layer.delete(layer.selected());
 }
 
 function update() {
